@@ -1,4 +1,4 @@
-from ddgs import DDGS
+from duckduckgo_search import DDGS
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
