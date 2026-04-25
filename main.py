@@ -132,6 +132,12 @@ def perform_web_search(query):
 # ==========================================
 # 4. THE API ENDPOINT (The Swarm Pipeline)
 # ==========================================
+
+# === HEALTH CHECK (The Front Lobby) === Base URL message instead of Not Found
+@app.get("/")
+async def root():
+    return {"message": "Super Agent API is LIVE and running smoothly!"}
+
 @app.post("/chat", response_model=SwarmResponse)
 async def chat_with_swarm(request: UserRequest):
     print(f"\n--- NEW REQUEST FROM [{request.user_id}] ---")
