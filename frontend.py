@@ -25,3 +25,12 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
+# === 5. THE USER INPUT BOX ===
+# This creates the text box at the bottom of the screen
+if prompt := st.chat_input("Ask the Swarm a question..."):
+
+    # A. Instantly draw the user's message on the screen
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
