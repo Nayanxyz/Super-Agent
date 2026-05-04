@@ -6,3 +6,7 @@ import uuid
 st.set_page_config(page_title="Enterprise Swarm", page_icon="🐝")
 st.title("🐝 Enterprise AI Swarm")
 
+# === 2. API CONNECTION (THE BRIDGE) ===
+# [IMPORTANT]: Paste your actual Render URL here. Make sure it ends in /chat!
+API_URL = "https://super-agent-0ycr.onrender.com/chat"
+
