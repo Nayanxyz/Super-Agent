@@ -61,3 +61,8 @@ if prompt := st.chat_input("Ask the Swarm a question..."):
 
                     # Save the AI's answer to the visual history
                     st.session_state.messages.append({"role": "assistant", "content": answer})
+                else:
+                    st.error(f"API Error: {response.status_code}")
+
+            except Exception as e:
+                st.error(f"Failed to connect to the cloud API. Is the server awake? Error: {e}")
