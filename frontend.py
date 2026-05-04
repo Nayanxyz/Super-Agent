@@ -48,3 +48,8 @@ if prompt := st.chat_input("Ask the Swarm a question..."):
                 # Fire the package over the internet to Render!
                 response = requests.post(API_URL, json=payload)
 
+                if response.status_code == 200:  # 200 means "OK / Success"
+                    data = response.json()
+                    answer = data["final_answer"]
+                    routing = data["manager_routing"]
+
