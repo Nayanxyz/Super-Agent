@@ -19,3 +19,9 @@ if "session_id" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# === 4. DRAW THE CHAT HISTORY ===
+# This loops through all past messages and draws them on the screen
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+
