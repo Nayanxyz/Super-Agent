@@ -44,3 +44,7 @@ if prompt := st.chat_input("Ask the Swarm a question..."):
                 "prompt": prompt
             }
 
+            try:
+                # Fire the package over the internet to Render!
+                response = requests.post(API_URL, json=payload)
+
