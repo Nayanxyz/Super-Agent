@@ -15,3 +15,7 @@ API_URL = "https://super-agent-0ycr.onrender.com/chat"
 if "session_id" not in st.session_state:
     st.session_state.session_id = str(uuid.uuid4())  # Generates a random string like '123e4567-e89b-12d3...'
 
+# We need to store the chat history just for the visual screen
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
