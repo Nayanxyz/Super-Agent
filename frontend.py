@@ -34,3 +34,13 @@ if prompt := st.chat_input("Ask the Swarm a question..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
+    # B. Send the package to the Cloud API
+    with st.chat_message("assistant"):
+        with st.spinner("The Swarm is thinking..."):  # Shows a loading spinner
+
+            # Package the data exactly how Pydantic expects it
+            payload = {
+                "user_id": st.session_state.session_id,
+                "prompt": prompt
+            }
+
