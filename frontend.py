@@ -53,3 +53,11 @@ if prompt := st.chat_input("Ask the Swarm a question..."):
                     answer = data["final_answer"]
                     routing = data["manager_routing"]
 
+                    # Draw the AI's final answer
+                    st.markdown(answer)
+
+                    # Draw a cool badge showing which departments the Manager used
+                    st.caption(f"🛣️ *System routed via: {routing}*")
+
+                    # Save the AI's answer to the visual history
+                    st.session_state.messages.append({"role": "assistant", "content": answer})
