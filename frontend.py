@@ -10,3 +10,8 @@ st.title("🐝 Enterprise AI Swarm")
 # [IMPORTANT]: Paste your actual Render URL here. Make sure it ends in /chat!
 API_URL = "https://super-agent-0ycr.onrender.com/chat"
 
+# === 3. SESSION MEMORY ===
+# We need to give this specific browser window a unique ID so the API remembers who we are.
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())  # Generates a random string like '123e4567-e89b-12d3...'
+
