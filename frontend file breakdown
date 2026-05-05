@@ -62,3 +62,14 @@ Block 4: Drawing the History
                (st.chat_message) and writes the text inside it (st.markdown). It repaints the entire history
                in a fraction of a millisecond.
 
+Block 5: The Action Trigger
+
+    Python:
+
+        if prompt := st.chat_input("Ask the Swarm a question..."):
+
+    The Walrus Operator (:=): This is a special Python trick. It does two things at once: It creates the visual text
+                              box at the bottom of the screen (st.chat_input), AND it waits for the user to press Enter.
+                              When the user presses Enter, it takes their text and assigns it to the variable prompt,
+                              then triggers the if statement.
+
