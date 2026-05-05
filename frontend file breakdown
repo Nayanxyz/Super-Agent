@@ -73,3 +73,12 @@ Block 5: The Action Trigger
                               When the user presses Enter, it takes their text and assigns it to the variable prompt,
                               then triggers the if statement.
 
+    Python:
+
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+
+    What it does: First, we save the user's new message into the permanent notebook so it survives the next screen wipe.
+                  Second, we immediately draw a user chat bubble on the screen with their text.
+
