@@ -82,3 +82,10 @@ Block 5: The Action Trigger
     What it does: First, we save the user's new message into the permanent notebook so it survives the next screen wipe.
                   Second, we immediately draw a user chat bubble on the screen with their text.
 
+    Python:
+
+        with st.chat_message("assistant"):
+            with st.spinner("The Swarm is thinking..."):
+
+    What it does: We draw an empty AI chat bubble on the screen, and put a spinning loading wheel inside it.
+
