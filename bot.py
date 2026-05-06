@@ -58,3 +58,7 @@ async def on_message(message):
             except Exception as e:
                 print(f"Error: {e}")
                 await message.reply("Failed to connect to the cloud brain.")
+
+
+# Turn on the power
+client.run(TOKEN)
