@@ -53,3 +53,8 @@ async def on_message(message):
 
                     # Reply in Discord with the AI's final answer
                     await message.reply(data["final_answer"])
+                else:
+                    await message.reply("The Swarm backend is currently unavailable.")
+            except Exception as e:
+                print(f"Error: {e}")
+                await message.reply("Failed to connect to the cloud brain.")
