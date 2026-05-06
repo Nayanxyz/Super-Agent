@@ -10,3 +10,9 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 # [IMPORTANT]: Paste your actual Render URL here!
 API_URL = "https://super-agent-0ycr.onrender.com/chat"
 
+# Give the bot permission to read messages
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
+
+
