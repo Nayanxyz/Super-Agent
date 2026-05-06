@@ -44,3 +44,12 @@ async def on_message(message):
                 "prompt": prompt
             }
 
+            try:
+                # Send the package to the Render Kitchen
+                response = requests.post(API_URL, json=payload)
+
+                if response.status_code == 200:
+                    data = response.json()
+
+                    # Reply in Discord with the AI's final answer
+                    await message.reply(data["final_answer"])
