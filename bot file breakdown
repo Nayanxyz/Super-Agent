@@ -32,3 +32,8 @@ Step 2: Configuration & Security
     load_dotenv(): This is a function call. It tells Python, "Look in this folder for a file named .env and
                    load all the secrets inside it into memory."
 
+    os.getenv("DISCORD_TOKEN"): This is a method. We are asking the OS to get the environment variable named DISCORD_TOKEN.
+                                We save that password into the TOKEN variable.
+
+    API_URL: This is just a string variable. It is the exact GPS coordinate of your Render "Kitchen."
+
