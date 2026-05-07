@@ -72,3 +72,8 @@ Step 4: Event 1 - Waking Up
 
     async def: async stands for asynchronous. It means "do this in the background without freezing the rest of the program."
 
+    on_ready(): This is a built-in Discord event. The moment your bot successfully logs into Discord's servers,
+                this tripwire snaps, and it triggers the code inside.
+
+    client.user: This grabs the bot's username (e.g., Super Agent Swarm#1234) and prints it to your terminal so you know it's alive.
+
