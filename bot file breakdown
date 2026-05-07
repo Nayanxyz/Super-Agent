@@ -163,3 +163,13 @@ Step 6: The Ignition
 
     As requested, here are the specific engineering roadblocks we hit while building this file, and how they connect to the code:
 
+    1. The "Blind Bot" Problem (Relates to Step 3)
+
+    What happened: You successfully invited the bot to your server, but when you typed messages, it completely ignored you.
+
+    The Cause: Discord recently updated their security policies to prevent bots from secretly reading user data.
+               Even though our code had intents.message_content = True, Discord blocked it on their end.
+
+    The Fix: We had to go into the Discord Developer Portal (the "Back of House") and manually flip the
+             "Message Content Intent" switch to grant the bot 20/20 vision.
+
