@@ -21,3 +21,14 @@ Step 1: The Imports (Gathering the Tools)
     from dotenv import load_dotenv: This is our lockpick. It allows Python to open and read your hidden .env file
                                     where your passwords are kept.
 
+Step 2: Configuration & Security
+
+    Python:
+
+        load_dotenv()
+        TOKEN = os.getenv("DISCORD_TOKEN")
+        API_URL = "https://your-render-app-name.onrender.com/chat"
+
+    load_dotenv(): This is a function call. It tells Python, "Look in this folder for a file named .env and
+                   load all the secrets inside it into memory."
+
