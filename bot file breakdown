@@ -15,3 +15,9 @@ Step 1: The Imports (Gathering the Tools)
     import requests: This is our "Courier." It is the library we use to send data packages
                       over the internet to your Render API.
 
+    import os: This stands for Operating System. It allows our Python script to look inside your
+               computer's folders and read hidden files.
+
+    from dotenv import load_dotenv: This is our lockpick. It allows Python to open and read your hidden .env file
+                                    where your passwords are kept.
+
