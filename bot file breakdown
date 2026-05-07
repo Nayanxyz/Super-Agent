@@ -151,3 +151,15 @@ Step 5: Event 2 - Hearing a Message
            the final_answer string, and use await message.reply() to make the bot drop the answer directly into the Discord channel,
            tagging the user who asked.
 
+Step 6: The Ignition
+
+        Python:
+            client.run(TOKEN)
+
+    Usage: None of the code above actually runs until this final line. client.run is the ignition switch.
+           It takes your secret password (TOKEN), connects the robot body (client) to the internet, and starts the infinite listening loop.
+
+    🚧 Problems Faced During bot.py Setup
+
+    As requested, here are the specific engineering roadblocks we hit while building this file, and how they connect to the code:
+
