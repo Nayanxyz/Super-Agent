@@ -130,3 +130,10 @@ Part 3: Demystifying the Code (bot.py)
         🚧 Problem we faced: The Sleeping Bot. You added the bot to the server, but it ignored you because we forgot
                               to give it permission to read the text channels!
 
+    Step 2: The Filter
+
+        The Code: if message.author == client.user: return
+
+        Explanation: Imagine a bot saying "Hello!" and then hearing its own "Hello!" and replying to itself infinitely.
+                     This line tells the bot: "If the person who sent the message is YOU, ignore it."
+
