@@ -137,3 +137,11 @@ Part 3: Demystifying the Code (bot.py)
         Explanation: Imagine a bot saying "Hello!" and then hearing its own "Hello!" and replying to itself infinitely.
                      This line tells the bot: "If the person who sent the message is YOU, ignore it."
 
+    Step 3: The Target (Mentions)
+
+        The Code: if client.user in message.mentions:
+
+        Explanation: In a crowded Discord server, friends are talking to each other. You don't want the AI interrupting
+                     every human conversation. This line tells the bot to stay asleep unless someone specifically tags
+                     its name (e.g., @Super Agent Swarm).
+
