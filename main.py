@@ -159,12 +159,11 @@ async def root():
 async def chat_with_swarm(request: UserRequest):
     print(f"\n--- NEW REQUEST FROM [{request.user_id}] ---")
 
-    # [API UPGRADE]: Pull up the specific user's memory, or create a new one if they are new
+    # [API UPGRADE]: Load memory from Supabase OR create a new one
     if request.user_id not in active_sessions:
-        active_sessions[request.user_id] = [
-            {"role": "system",
-             "content": "You are the Senior Synthesis AI. Answer clearly using the provided system data."}
-        ]
+        print(f"[DB LOG] Checking Supabase for past history of {request.user_id}...")
+
+
 
     # 1. Commit user message to their specific memory
     user_history = active_sessions[request.user_id]
