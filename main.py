@@ -244,6 +244,16 @@ USER PROMPT: {request.prompt}"""
     # 6. Final Commit & Return Payload
     user_history.append({"role": "assistant", "content": ai_words})
 
+    # --- NAYI LINE: Supabase mein AI ka message bhejo ---
+    try:
+        supabase.table("messagesDDG").insert({
+            "user_id": request.user_id,
+            "role": "assistant",
+            "content": ai_words
+        }).execute()
+        print("[DB LOG] AI response saved to Supabase")
+    except Exception as e:
+        print(f"[DB ERROR] AI response fail: {e}")
 
     print("--- REQUEST COMPLETE ---")
 
