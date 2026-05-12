@@ -177,7 +177,13 @@ async def chat_with_swarm(request: UserRequest):
              "content": "You are the Senior Synthesis AI. Answer clearly using the provided system data."}
         ]
 
-
+        # 3. Agar purani history mili, toh usko RAM mein load karo
+        if len(past_messages) > 0:
+            print(f"[DB LOG] Found {len(past_messages)} past messages! Loading into RAM...")
+            for msg in past_messages:
+                active_sessions[request.user_id].append({"role": msg["role"], "content": msg["content"]})
+        else:
+            print("[DB LOG] New user. No past history found.")
 
     # 1. Commit user message to their specific memory
     user_history = active_sessions[request.user_id]
