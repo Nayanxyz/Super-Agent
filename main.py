@@ -171,6 +171,12 @@ async def chat_with_swarm(request: UserRequest):
             print(f"[DB ERROR] Could not read memory: {e}")
             past_messages = []
 
+        # 2. Base System Prompt lagao
+        active_sessions[request.user_id] = [
+            {"role": "system",
+             "content": "You are the Senior Synthesis AI. Answer clearly using the provided system data."}
+        ]
+
 
 
     # 1. Commit user message to their specific memory
