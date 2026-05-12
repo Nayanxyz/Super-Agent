@@ -127,7 +127,7 @@ def compress_memory(history_list):
 def calculate_math(expression):
     return eval(str(expression))
 
-# Scrape Wikipedia but 100x smarter with duckduckgo
+# Scrape Wikipedia but 100x smarter with DuckDuckGo
 def perform_web_search(query):
     print(f"\n[SERVER LOG] Searching the LIVE NEWS for: '{query}'")
     try:
