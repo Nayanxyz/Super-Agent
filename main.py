@@ -163,6 +163,14 @@ async def chat_with_swarm(request: UserRequest):
     if request.user_id not in active_sessions:
         print(f"[DB LOG] Checking Supabase for past history of {request.user_id}...")
 
+        # 1. Supabase se history mango
+        try:
+            db_response = supabase.table("messages").select("*").eq("user_id", request.user_id).execute()
+            past_messages = db_response.data
+        except Exception as e:
+            print(f"[DB ERROR] Could not read memory: {e}")
+            past_messages = []
+
 
 
     # 1. Commit user message to their specific memory
