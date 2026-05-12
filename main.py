@@ -8,6 +8,7 @@ import chromadb
 import re
 from dotenv import load_dotenv
 from datetime import datetime
+from supabase import create_client, Client
 
 load_dotenv()
 API_KEY = os.getenv("GROQ_API_KEY")
