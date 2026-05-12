@@ -5,3 +5,4 @@ requests
 chromadb
 python-dotenv
 duckduckgo-search
+supabase
